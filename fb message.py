@@ -43,5 +43,6 @@ def sendMessage(friend_name,msg,times,delay):
 if __name__ == "__main__":
 	web_driver_load()
 	facebook_login()
-	sendMessage('george.lucas','Tin!',100,0)
+	sendMessage('george.lucas','Tin!',100,0)#params are your friend id/name, the message you want to send, 
+						#the number of times you want to send it, the delay between each message
 	web_driver_quit()
