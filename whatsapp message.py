@@ -1,7 +1,8 @@
+#Sends automatically messages to one of yours whatsapp contacts
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time,os
-
 
 def wait(web_opening_time=3):
 	time.sleep(web_opening_time)
@@ -35,8 +36,8 @@ if __name__ == "__main__":
 	whatsapp_login()
 	wait()
 	#sending 50 messages
-	for i in range(1):
-		sendMessage("Tin di gruppo!")
+	for i in range(50):
+		sendMessage("Tin!")
 	print("Process complete successfully")
 
 	wait()
