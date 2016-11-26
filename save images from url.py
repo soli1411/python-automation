@@ -14,4 +14,4 @@ def getImagesFromUrl(url):
         c+=1
     print('finished')
 
-getImagesFromUrl('http://cutepugpics.com/')
+getImagesFromUrl('http://www.dumpaday.com/funny-pictures/funny-pug-dog-pictures-35-pics/')
