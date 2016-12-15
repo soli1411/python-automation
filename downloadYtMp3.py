@@ -22,6 +22,10 @@ def changeTitleAndArtist(filename,title,artist):
 
 def findTitleAndArtist(filename):
       filename=filename.lower()
+      chars_to_delete_from_title='_-~,\'\\/?"<>'
+      for char in chars_to_delete_from_title:
+            filename=filename.replace(char,'')
+      print(filename)
       index=min(filename.find("official"),filename.find("video"),len(filename))
       if index==-1:
           filename=filename[0:len(filename)]
@@ -83,6 +87,6 @@ def downloadFromFile(fileAddress):
             myfile.seek(0)
             myfile.truncate()
 
-downloadFromFile(folder+'LinksOfSongsToDl.txt')#to download songs from links listed in file
-#downloadFromYt('https://www.youtube.com/watch?v=NsnSQtsdMJI')#to download song from url
+downloadFromFile(folder+'LinksOfSongsToDl.txt')#downloading songs from links listed in file
+#downloadFromYt('https://www.youtube.com/watch?v=Mb3iPP-tHdA&list=PL4F7897A322F25EBC&index=1')#downloading song from url
 tag()#tries to tag the mp3s of the downloaded songs
