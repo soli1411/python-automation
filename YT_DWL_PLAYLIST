@@ -89,7 +89,7 @@ def downloadFromFile(fileAddress):
             #myfile.truncate()#use this to clear the source file
 """
 Before running ensure to have installed python 3, and install beautiful soup 4, mutagen, youtube_dl by running in cmd shell "py -m pip install "libname"". Installed also by using chocolatey for installing ffmpeg with choco -install ffmpeg
-Execute this in the browser console of your own playlist and copy content to folder+'playlist.txt' file, then run the script.
+Execute this in the browser console of your own playlist to copy the content to clipboard and paste in into folder+'playlist.txt' file, then run the script.
 
 var videos = document.querySelectorAll('.yt-simple-endpoint.style-scope.ytd-playlist-video-renderer');
 var r = [];
@@ -101,7 +101,14 @@ r.forEach.call(videos, function(video) {
 	url = url[0];
 	json.push(url);
 });
-JSON.stringify(json)
+//console.log(json)
+//JSON.stringify(json)
+var input = document.createElement('input');
+    input.setAttribute('value', json);
+    document.body.appendChild(input);
+    input.select();
+    var result = document.execCommand('copy');
+    document.body.removeChild(input);
 """
 #downloadFromYt('https://www.youtube.com/playlist?list=WL')
 downloadFromFile(folder+'playlist.txt')#downloading songs from links listed in file. Note: file and script coming from same folder.
